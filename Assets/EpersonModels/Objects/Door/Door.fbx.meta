@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 132b21d838e9cec458a940dcb9ade6b2
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: 5237116283101885232
+    second: OpenDoor
+  - first:
+      74: 6887839076449147291
+    second: GearRotate2
+  - first:
+      74: 3477916252159710318
+    second: GearRotate
+  - first:
+      74: 5361734799814092528
+    second: OpenDoor2
+  - first:
+      74: 3739484592396046127
+    second: Door_1|Cube.001Action.001
+  - first:
+      74: -6563101703255996773
+    second: Door_1|Cylinder.001Action.002
+  - first:
+      74: -5698313845953943832
+    second: Door_1|GearRotate
+  - first:
+      74: 3748594913009363346
+    second: Door_1|GearRotate2
+  - first:
+      74: -2779755264263038376
+    second: Door_1|OpenDoor
+  - first:
+      74: -6702755030932577551
+    second: Door_1|OpenDoor2
+  - first:
+      74: -1287996598551493105
+    second: Gear3|Cube.001Action.001
+  - first:
+      74: -722484211651623570
+    second: Gear3|Cylinder.001Action.002
+  - first:
+      74: -7548688116862664302
+    second: Gear3|GearRotate
+  - first:
+      74: 3702703770994209307
+    second: Gear3|GearRotate2
+  - first:
+      74: -2362169291742820915
+    second: Gear3|OpenDoor
+  - first:
+      74: -4145031976486743971
+    second: Gear3|OpenDoor2
+  - first:
+      74: -2481483001366207500
+    second: Gear1|Cube.001Action.001
+  - first:
+      74: -3304279580572735921
+    second: Gear1|Cylinder.001Action.002
+  - first:
+      74: -3901942829649360399
+    second: Gear1|GearRotate
+  - first:
+      74: -875288155153538135
+    second: Gear1|GearRotate2
+  - first:
+      74: -3377307958137171946
+    second: Gear1|OpenDoor
+  - first:
+      74: -7372212351059410996
+    second: Gear1|OpenDoor2
+  - first:
+      74: 7678433450383653884
+    second: Gear4|Cube.001Action.001
+  - first:
+      74: -3725248526232999324
+    second: Gear4|Cylinder.001Action.002
+  - first:
+      74: 4646178415696297417
+    second: Gear4|GearRotate
+  - first:
+      74: 2241960621967319129
+    second: Gear4|GearRotate2
+  - first:
+      74: -4037359674833228682
+    second: Gear4|OpenDoor
+  - first:
+      74: -8581017358407939907
+    second: Gear4|OpenDoor2
+  - first:
+      74: -2187231179824019936
+    second: Gear2|Cube.001Action.001
+  - first:
+      74: -1404287354294761658
+    second: Gear2|Cylinder.001Action.002
+  - first:
+      74: 6496726884567855469
+    second: Gear2|GearRotate
+  - first:
+      74: -8937918138445127748
+    second: Gear2|GearRotate2
+  - first:
+      74: -3608783942839742357
+    second: Gear2|OpenDoor
+  - first:
+      74: -386644061680975459
+    second: Gear2|OpenDoor2
+  - first:
+      74: -2080450146744136247
+    second: Door_2|Cube.001Action.001
+  - first:
+      74: 2670779679267215234
+    second: Door_2|Cylinder.001Action.002
+  - first:
+      74: 5623125663576665299
+    second: Door_2|GearRotate
+  - first:
+      74: -5877326619226442026
+    second: Door_2|GearRotate2
+  - first:
+      74: -565828241628383496
+    second: Door_2|OpenDoor
+  - first:
+      74: -3319951925270205366
+    second: Door_2|OpenDoor2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 28aac20a6ed601f4085e8c8dc5f46824, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gear
+    second: {fileID: 2100000, guid: 13173f53937477f4389c940314f3d11e, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
