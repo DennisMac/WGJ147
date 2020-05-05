@@ -11,6 +11,7 @@ public class LevelExit : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            GetComponentInChildren<Animator>().SetTrigger("interact");
             //make a sound and load level
             Invoke("LoadLevelNow", 1);
         }
