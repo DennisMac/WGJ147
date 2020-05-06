@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8414723725971388381}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RobotPatrol
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -44,6 +44,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PatrolPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366625799914455423, guid: 03621a07d4d5e6547bc5c573bc396a67,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
@@ -119,6 +124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PatrolPoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366625799914455423, guid: 03621a07d4d5e6547bc5c573bc396a67,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
