@@ -7,11 +7,31 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class AICharacterControl : MonoBehaviour
     {
+        AudioSource audioSource;
+        [SerializeField]
+        AudioClip[] audioClips;
+
         public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
         private Transform target;                                    // target to aim for
 
-        bool patrolling = true;
+
+        bool patrolling = false;
+        bool Patrolling
+        {
+            get { return patrolling; }
+            set
+            {
+                if (patrolling != value)
+                {
+                    patrolling = value;
+                    if (audioSource != null)
+                    {
+                        audioSource.PlayOneShot(audioClips[UnityEngine.Random.Range(0, audioClips.Length)]);
+                    }
+                }
+            }
+        }
         public Transform[] patrolPoints;
         private int patrolIndex = 0;
 
@@ -20,6 +40,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // get the components on the object we need ( should not be null due to require component so no need to check )
             agent = GetComponentInChildren<UnityEngine.AI.NavMeshAgent>();
             character = GetComponent<ThirdPersonCharacter>();
+            audioSource = GetComponent<AudioSource>();
 
 	        agent.updateRotation = false;
 	        agent.updatePosition = true;
@@ -33,7 +54,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 idleTime += Time.deltaTime;
                 if (idleTime > 2)
                 {
-                    patrolling = true;
+                    Patrolling = true;
                     patrolIndex = 0;
                     target = patrolPoints[patrolIndex];
                 }
@@ -69,7 +90,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             else
             {
-                patrolling = false;
+                Patrolling = false;
                 idleTime = 0f;
                 this.target = target;
             }
