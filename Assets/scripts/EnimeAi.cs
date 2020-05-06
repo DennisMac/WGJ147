@@ -8,46 +8,48 @@ public class heath {
 public class EnimeAi : MonoBehaviour
 
 {
-
-	public Transform target;
-	public float speed = 2f;
+    bool targetAquired = false;
+    public Transform target;
+    public float speed = 2f;
     Cloak playerCloak;
     Vector3 originalPosition;
     Rigidbody rbody;
-
-	void Start ()
+    AudioSource audioSource;
+    void Start()
     {
         playerCloak = FindObjectOfType<Cloak>();
-		target = GameObject.FindGameObjectWithTag ("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         originalPosition = transform.position;
         rbody = GetComponentInChildren<Rigidbody>();
-	}
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void FixedUpdate()
     {
         if (target == null) return;
-        if (!playerCloak.IsCloaked) // If the player is pressing the "a " key
+        if (!playerCloak.IsCloaked)
         {
             RaycastHit hit;
             Physics.Raycast(transform.position, (target.position - transform.position), out hit, 100);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.layer == 8 && hit.distance >5)
+                if (hit.collider.gameObject.layer == 8 && hit.distance > 5)
                 {
                     rbody.AddForce((target.position - transform.position) * speed);
                 }
             }
         }
+
+        if (audioSource != null)
+        {
+            if (rbody.velocity.sqrMagnitude > 0.1f)
+            {
+                if(!audioSource.isPlaying) audioSource.Play();
+            }
+            else
+            {
+                audioSource.Stop();
+            }
+        }
     }
-
-    void Update ()
-    {		
-
-        //if ((target.position - transform.position).magnitude > 50) //todo: remove this after testing. It just respawns if the enemy gets too far away
-        //{
-        //    transform.position = originalPosition;
-        //    rbody.velocity = Vector3.zero;
-        //}
-
-	}
 }
