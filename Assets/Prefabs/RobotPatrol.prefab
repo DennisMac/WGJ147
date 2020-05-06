@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8414723725971388381}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RobotPatrol
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -44,6 +44,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PatrolPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366625799914455423, guid: 03621a07d4d5e6547bc5c573bc396a67,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
@@ -120,6 +125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrolPoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3366625799914455423, guid: 03621a07d4d5e6547bc5c573bc396a67,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -190,10 +200,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8414723725971388381}
     m_Modifications:
-    - target: {fileID: 1876337401136089105, guid: 03197179e75fbe640b1821adca07a3f2,
+    - target: {fileID: 665491962, guid: 03197179e75fbe640b1821adca07a3f2, type: 3}
+      propertyPath: delayedExplosionPrefab
+      value: 
+      objectReference: {fileID: 5458830834722851981, guid: c46d5a04d5dd01a4d8471721ccd8eb71,
         type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
+    - target: {fileID: 1222958489437750057, guid: 03197179e75fbe640b1821adca07a3f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1876337401136089105, guid: 03197179e75fbe640b1821adca07a3f2,
         type: 3}
@@ -205,11 +220,6 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 4084511151068046775}
-    - target: {fileID: 1876337401136089105, guid: 03197179e75fbe640b1821adca07a3f2,
-        type: 3}
-      propertyPath: patrolPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3561482921563792774, guid: 03197179e75fbe640b1821adca07a3f2,
         type: 3}
       propertyPath: m_Name
