@@ -7,12 +7,15 @@ public class Projectile : MonoBehaviour
     public float speed = 10f;
     float lifeTime = 2f;
     public GameObject explosionPrefab;
-
+    [SerializeField]
+    AudioClip[] audioClips;
+    [SerializeField]
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
     }
 
     // Update is called once per frame

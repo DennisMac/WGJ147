@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GunController : MonoBehaviour {
 
+    AudioSource audioSource;
 	public GameObject particle;
 	public Texture2D cursorTexture;
 	private int cursorSize = 64;
@@ -15,6 +16,7 @@ public class GunController : MonoBehaviour {
 
 	void Start()
 	{
+        audioSource = GetComponent<AudioSource>();
         laserLight = GetComponentInChildren<Light>();
         laserLight.enabled = false;
         
@@ -58,9 +60,11 @@ public class GunController : MonoBehaviour {
                     wasCloaked = Global.PlayerCloaked;
                     Global.PlayerCloaked = false;
                     Global.PlayerFiring = true;
+                    audioSource.Play();
                 }
                 if (Input.GetButtonUp("Fire1"))
                 {
+                    audioSource.Stop();
                     Global.PlayerCloaked = wasCloaked;
                     Global.PlayerFiring = false;
                 }
