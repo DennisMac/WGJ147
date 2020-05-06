@@ -143,6 +143,7 @@ MonoBehaviour:
   ExplosionPrefab: {fileID: 100010, guid: 9d43ab7898a565a4da72daba38071c0d, type: 3}
   health: 1000
   bodyParts: []
+  delayedExplosionPrefab: {fileID: 0}
 --- !u!114 &2367599372595645542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +237,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 94ce7a518e11a6b44bdfb967a873624f, type: 2}
+      objectReference: {fileID: 2100000, guid: 6aa9c8124f9c42541809aa18ddc8d9a0, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 6ca212eb6a5ab44439642654278ca45f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 6ca212eb6a5ab44439642654278ca45f,
         type: 3}
       propertyPath: m_Name

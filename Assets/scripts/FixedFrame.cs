@@ -13,10 +13,7 @@ public class FixedFrame : MonoBehaviour
         originalRotation = transform.rotation;
         originalPosition = transform.localPosition;
     }
-
-
-
-
+    
 
     // Update is called once per frame
     void Update()

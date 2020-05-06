@@ -5776,15 +5776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RobotPatrol
       objectReference: {fileID: 0}
-    - target: {fileID: 3602435961844417015, guid: b7353f7eccac8434aa2e989afe43bf77,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8414723725971388381, guid: b7353f7eccac8434aa2e989afe43bf77,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3479686
+      value: 6.86
       objectReference: {fileID: 0}
     - target: {fileID: 8414723725971388381, guid: b7353f7eccac8434aa2e989afe43bf77,
         type: 3}
@@ -5794,7 +5789,7 @@ PrefabInstance:
     - target: {fileID: 8414723725971388381, guid: b7353f7eccac8434aa2e989afe43bf77,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.1126328
+      value: -11.56
       objectReference: {fileID: 0}
     - target: {fileID: 8414723725971388381, guid: b7353f7eccac8434aa2e989afe43bf77,
         type: 3}

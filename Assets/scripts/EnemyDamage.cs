@@ -10,6 +10,7 @@ public class EnemyDamage : MonoBehaviour
     private float health = 100;
     public GameObject[] bodyParts;
     List<GameObject> bodyPartsList;
+    public GameObject delayedExplosionPrefab;
 
     public void Damage( float damage)
     {
@@ -17,7 +18,7 @@ public class EnemyDamage : MonoBehaviour
         if (health < 0)
         {
             health = 100;
-            if (bodyPartsList.Count > 0)
+            if (bodyPartsList.Count > 0) //drop a body part off
             {
                 GameObject go = bodyPartsList[0];
                 bodyPartsList.RemoveAt(0);
@@ -27,6 +28,9 @@ public class EnemyDamage : MonoBehaviour
                 go.transform.parent = null;
                 go.AddComponent<Rigidbody>();
                 go.GetComponent<BoxCollider>().enabled = true;
+                go.AddComponent<ObjectDestroyer>();
+                //GameObject delayedExplosion  = Instantiate(delayedExplosionPrefab, go.transform.position, Quaternion.identity);
+                //delayedExplosion.transform.parent = go.transform;
             }
             if (bodyPartsList.Count <= 0)
             {

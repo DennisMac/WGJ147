@@ -1245,8 +1245,6 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &6438183707674740361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,6 +1300,8 @@ MonoBehaviour:
   - {fileID: 690954261195794266}
   - {fileID: 1222958489437750057}
   - {fileID: 8891614856201988121}
+  delatedExplosionPrefab: {fileID: 5458830834722851981, guid: c46d5a04d5dd01a4d8471721ccd8eb71,
+    type: 3}
 --- !u!1 &3565758354498559934
 GameObject:
   m_ObjectHideFlags: 0
