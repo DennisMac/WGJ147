@@ -17,20 +17,16 @@ public class EnemyDamage : MonoBehaviour
         health -= damage;
         if (health < 0)
         {
-            health = 100;
+            health = 100; //health resets each time he loses a body part
             if (bodyPartsList.Count > 0) //drop a body part off
             {
                 GameObject go = bodyPartsList[0];
                 bodyPartsList.RemoveAt(0);
-
-                //go.GetComponentInChildren<BoxCollider>().gameObject.layer = 11;
                 go.layer = 11;
                 go.transform.parent = null;
                 go.AddComponent<Rigidbody>();
                 go.GetComponent<BoxCollider>().enabled = true;
                 go.AddComponent<ObjectDestroyer>();
-                //GameObject delayedExplosion  = Instantiate(delayedExplosionPrefab, go.transform.position, Quaternion.identity);
-                //delayedExplosion.transform.parent = go.transform;
             }
             if (bodyPartsList.Count <= 0)
             {

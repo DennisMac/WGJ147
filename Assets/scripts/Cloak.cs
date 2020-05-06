@@ -96,7 +96,7 @@ public class Cloak : MonoBehaviour
             k++;
         }
 
-        Cloaked = true;
+        Cloaked = false;
     }
 
 
