@@ -56,7 +56,7 @@ public class EnemyGun : MonoBehaviour
         }
     }
 
-    Vector3 offset = new Vector3(.1f, 0, 0);
+    Vector3 offset = new Vector3(.1f, 0, 0); //line up with the barrel of gun
     void FireWeapon()
     {
         offset = -offset;

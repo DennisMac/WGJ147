@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         //healthSlider.value = 100f;
+        healthSlider = FindObjectOfType<Slider>();
     }
 
 

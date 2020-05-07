@@ -67,7 +67,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			}
 			else
 			{
-                HandleAirborneMovement(Vector3.ProjectOnPlane(airMove/5f, m_GroundNormal));
+                HandleAirborneMovement(Vector3.ProjectOnPlane(airMove/5f, m_GroundNormal), jump);
                 //Debug.Log(move);
             }
 
@@ -156,7 +156,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		}
 
 
-		void HandleAirborneMovement(Vector3 move)
+
+        bool doubleJumpDisabled = false;
+		void HandleAirborneMovement(Vector3 move, bool attemptDoubleJump)
 		{
 			// apply extra gravity from multiplier:
 			Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
@@ -164,10 +166,24 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Rigidbody.AddForce(20f * (  move));
 
 			m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
-		}
+
+            #region doubleJump
+            if (attemptDoubleJump && !doubleJumpDisabled)
+            {
+                doubleJumpDisabled = true;
+                if (m_Rigidbody.velocity.y > 0 && m_Rigidbody.velocity.y < 1f)
+                {
+                    m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+                    m_IsGrounded = false;
+                    m_Animator.applyRootMotion = false;
+                    m_GroundCheckDistance = 0.1f;
+                }
+            }
+            #endregion
+        }
 
 
-		void HandleGroundedMovement(bool crouch, bool jump)
+        void HandleGroundedMovement(bool crouch, bool jump)
 		{
 			// check whether conditions are right to allow a jump:
 			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
@@ -177,6 +193,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_IsGrounded = false;
 				m_Animator.applyRootMotion = false;
 				m_GroundCheckDistance = 0.1f;
+                doubleJumpDisabled = false;
 			}
 		}
 
