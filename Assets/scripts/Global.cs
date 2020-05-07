@@ -9,7 +9,9 @@ public class Global
     public static float PlayerSpeed { get { return playerspeed; }}
     public static bool PlayerCloaked = false;
     public static bool PlayerFiring = false;
+    public static Transform PlayerTransform;
 
+    public static AudioSource musicAudioSource;
     
 
 }

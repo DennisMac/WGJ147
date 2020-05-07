@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Slider healthSlider;
+    Slider healthSlider;
     public GameObject ragdollPrefab;
     // Start is called before the first frame update
     void Start()
     {
         //healthSlider.value = 100f;
         healthSlider = FindObjectOfType<Slider>();
+        Global.PlayerTransform = this.transform;
     }
 
 

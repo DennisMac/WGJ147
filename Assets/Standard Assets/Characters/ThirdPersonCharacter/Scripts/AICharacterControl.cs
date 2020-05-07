@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     patrolling = value;
                     if (audioSource != null)
                     {
-                        audioSource.PlayOneShot(audioClips[UnityEngine.Random.Range(0, audioClips.Length)]);
+                        audioSource.PlayOneShot(audioClips[UnityEngine.Random.Range(0, audioClips.Length)]);                        
                     }
                 }
             }

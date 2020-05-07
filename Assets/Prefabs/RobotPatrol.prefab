@@ -51,10 +51,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 47
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 6
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -129,6 +129,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &106757085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516242710174889344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09bdbdfcb6420ff4f97c831c848bb1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footSteps:
+  - {fileID: 8300000, guid: 612ec7e3c1867f64f8e9d3073a3a38c6, type: 3}
+  - {fileID: 8300000, guid: 98ecc8e5c86d45f44a526d7c2c91f430, type: 3}
 --- !u!1001 &6423227308679767510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
@@ -229,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
@@ -239,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 7029268496860654844, guid: 03621a07d4d5e6547bc5c573bc396a67,
         type: 3}
@@ -336,6 +351,11 @@ PrefabInstance:
       propertyPath: audioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 67f3a30af1ec65f4d92b394d3c7468bb, type: 3}
+    - target: {fileID: 2496473584974436197, guid: 03197179e75fbe640b1821adca07a3f2,
+        type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3561482921563792774, guid: 03197179e75fbe640b1821adca07a3f2,
         type: 3}
       propertyPath: m_Name
