@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: c537bd63f60e4234ca4af4a7ea66fcf6, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5be37de0ca2c6b8438c130abeb81c178, type: 2}
 --- !u!1001 &759840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1274,6 +1274,11 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 281297807}
+    - target: {fileID: 8260457720477228392, guid: 6b28643d92a66fb46bffa2086af14e3a,
+        type: 3}
+      propertyPath: m_JumpPower
+      value: 9.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8260457720482682410, guid: 6b28643d92a66fb46bffa2086af14e3a,
         type: 3}
       propertyPath: m_Name
@@ -4112,11 +4117,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3233926321860131977, guid: f206f9e1e07b9864f89cb9927de3a335,
-        type: 3}
-      propertyPath: levelToLoad
-      value: Level 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3233926321860131983, guid: f206f9e1e07b9864f89cb9927de3a335,
         type: 3}
       propertyPath: m_Name
@@ -4978,6 +4978,14 @@ PrefabInstance:
     - target: {fileID: 400004, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 578087656, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
+      propertyPath: StartLookat.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 578087656, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
+      propertyPath: StartLookat.z
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49a0e923d39ec3c4c8bb97699e2f2903, type: 3}
