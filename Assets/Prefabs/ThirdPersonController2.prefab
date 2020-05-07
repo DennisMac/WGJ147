@@ -724,6 +724,7 @@ MonoBehaviour:
   - {fileID: -2244931677291714179, guid: 4edd7c418625a13488430b98193b382c, type: 3}
   - {fileID: 3511325375820423461, guid: 4edd7c418625a13488430b98193b382c, type: 3}
   - {fileID: 5538598969871248389, guid: 4edd7c418625a13488430b98193b382c, type: 3}
+  cloakClip: {fileID: 8300000, guid: 53a9950ad81120f4b851031f21b60cb6, type: 3}
 --- !u!114 &1222872111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,7 +737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d582e0d85c3d547b2b013d0463c5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 0}
   ragdollPrefab: {fileID: 6559840417603139232, guid: fad041b9b52cc964e8d798b0ebed4a41,
     type: 3}
 --- !u!82 &1996925163

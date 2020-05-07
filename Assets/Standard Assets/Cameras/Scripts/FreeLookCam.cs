@@ -45,7 +45,8 @@ namespace UnityStandardAssets.Cameras
 
 
         protected void Update()
-        {
+        {   
+
             HandleRotationMovement();
             if (m_LockCursor && Input.GetMouseButtonUp(0))
             {

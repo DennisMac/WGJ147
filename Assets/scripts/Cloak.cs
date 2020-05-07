@@ -26,9 +26,12 @@ public class Cloak : MonoBehaviour
     MeshRenderer[] meshRenderers;
     Material[][] decloakedExtraMaterials;
     Material[] decloackedExtraSingleMaterial;
-
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip cloakClip;
 
     public static List<AICharacterControl> aiCharacterControl;
+    private bool wasCloaked;
 
     bool Cloaked
     {
@@ -40,8 +43,8 @@ public class Cloak : MonoBehaviour
             {
                 foreach (AICharacterControl aicc in aiCharacterControl)
                 {
-                    aicc.SetTarget( null);
-                }
+                    aicc.SetTarget(null);
+                }                
             }
             else
             {
@@ -68,7 +71,7 @@ public class Cloak : MonoBehaviour
 
     private void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
         aiCharacterControl = new List<AICharacterControl>(FindObjectsOfType<AICharacterControl>());
         foreach (AICharacterControl aicc in aiCharacterControl)
         {
@@ -112,12 +115,16 @@ public class Cloak : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 Cloaked = !Cloaked;
-                if (Global.PlayerFiring) Cloaked = false;
+                if (Global.PlayerFiring) Cloaked = false;                
             }
         }
 
         if (Cloaked)
         {
+            if (!wasCloaked)
+            {
+                audioSource.PlayOneShot(cloakClip);
+            }
             currentEnergy -= Time.deltaTime * powerUsage;
             if (currentEnergy <= 0)
             {
@@ -179,5 +186,6 @@ public class Cloak : MonoBehaviour
                 }
             }
         }
+        wasCloaked = Cloaked;
     }
 }
