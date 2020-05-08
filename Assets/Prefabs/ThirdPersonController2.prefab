@@ -708,15 +708,6 @@ MonoBehaviour:
   powerUsage: 10
   cloakedMaterial:
   - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
-  - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
   decloakedMaterial:
   - {fileID: 4889210747406939824, guid: 4edd7c418625a13488430b98193b382c, type: 3}
   - {fileID: -7256372768549644637, guid: 4edd7c418625a13488430b98193b382c, type: 3}
@@ -725,6 +716,8 @@ MonoBehaviour:
   - {fileID: 3511325375820423461, guid: 4edd7c418625a13488430b98193b382c, type: 3}
   - {fileID: 5538598969871248389, guid: 4edd7c418625a13488430b98193b382c, type: 3}
   cloakClip: {fileID: 8300000, guid: 53a9950ad81120f4b851031f21b60cb6, type: 3}
+  sparklesPrefab: {fileID: 6729207192735731016, guid: 273603849419715479a579bafe5ce106,
+    type: 3}
 --- !u!114 &1222872111
 MonoBehaviour:
   m_ObjectHideFlags: 0

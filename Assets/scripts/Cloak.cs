@@ -29,6 +29,8 @@ public class Cloak : MonoBehaviour
     AudioSource audioSource;
     [SerializeField]
     AudioClip cloakClip;
+    [SerializeField]
+    GameObject sparklesPrefab;
 
     public static List<AICharacterControl> aiCharacterControl;
     private bool wasCloaked;
@@ -124,6 +126,9 @@ public class Cloak : MonoBehaviour
             if (!wasCloaked)
             {
                 audioSource.PlayOneShot(cloakClip);
+                GameObject sparkles = Instantiate(sparklesPrefab, transform.position + Vector3.up + Camera.main.transform.forward*0.25f , Quaternion.identity);
+                sparkles.transform.parent = this.transform;
+                
             }
             currentEnergy -= Time.deltaTime * powerUsage;
             if (currentEnergy <= 0)
