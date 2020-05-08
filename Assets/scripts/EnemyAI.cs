@@ -5,7 +5,7 @@ public class heath {
 	public static int Player = 5;
 }
 
-public class EnimeAi : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 
 {
     bool targetAquired = false;
