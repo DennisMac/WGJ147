@@ -7,6 +7,7 @@ public class EmitterStopper : MonoBehaviour
     [SerializeField] private float m_TimeOut = 2.0f;
     [SerializeField] private float m_EmitterOff = 0.20f;
     [SerializeField] private bool m_DetachChildren = false;
+    Hourglass Gauge_UI;
 
 
     private void Awake()

@@ -42,17 +42,27 @@ namespace UnityStandardAssets.Cameras
 			m_TransformTargetRot = transform.localRotation;
             instance = this;
         }
+         
 
-
+        float lastUpdate = 0f;
         protected void Update()
         {   
-
             HandleRotationMovement();
             if (m_LockCursor && Input.GetMouseButtonUp(0))
             {
                 Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
                 Cursor.visible = !m_LockCursor;
             }
+
+
+            ManualUpdate();
+            //lastUpdate += (Time.deltaTime / Time.timeScale);
+            //if (lastUpdate > 0.014)
+            //{
+            //    ManualUpdate();
+            //    lastUpdate = 0f;
+            //}
+
         }
 
 
@@ -106,8 +116,8 @@ namespace UnityStandardAssets.Cameras
 
 			if (m_TurnSmoothing > 0)
 			{
-				m_Pivot.localRotation = Quaternion.Slerp(m_Pivot.localRotation, m_PivotTargetRot, m_TurnSmoothing * Time.deltaTime);
-				transform.localRotation = Quaternion.Slerp(transform.localRotation, m_TransformTargetRot, m_TurnSmoothing * Time.deltaTime);
+				m_Pivot.localRotation = Quaternion.Slerp(m_Pivot.localRotation, m_PivotTargetRot, m_TurnSmoothing * (Time.deltaTime/Time.timeScale));
+				transform.localRotation = Quaternion.Slerp(transform.localRotation, m_TransformTargetRot, m_TurnSmoothing * (Time.deltaTime/Time.timeScale));
 			}
 			else
 			{

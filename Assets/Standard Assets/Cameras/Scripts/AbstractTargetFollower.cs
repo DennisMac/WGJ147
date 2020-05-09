@@ -73,7 +73,7 @@ namespace UnityStandardAssets.Cameras
             }
             if (m_UpdateType == UpdateType.ManualUpdate)
             {
-                FollowTarget(Time.deltaTime);
+                FollowTarget((Time.deltaTime/Time.timeScale));
             }
         }
 
