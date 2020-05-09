@@ -17,13 +17,13 @@ public class TimeDialator : MonoBehaviour
     [SerializeField]
     float powerUsage = 10f;
     [SerializeField]
-    Hourglass Gauge_UI;
+    Hourglass2 Gauge_UI;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //Gauge_UI = FindObjectOfType<Hourglass>();
+        Gauge_UI = FindObjectOfType<Hourglass2>();
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class TimeDialator : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown("q"))
+            if (Input.GetKeyDown("f"))
             {
                 poweredOn = !poweredOn;
             }

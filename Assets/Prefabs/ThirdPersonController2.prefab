@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 1222872111}
   - component: {fileID: 1996925163}
   - component: {fileID: 1996925162}
+  - component: {fileID: 1852754742}
   m_Layer: 8
   m_Name: ThirdPersonController2
   m_TagString: Player
@@ -706,6 +707,7 @@ MonoBehaviour:
   depletedDelay: 2
   chargeRate: 20
   powerUsage: 10
+  Gauge_UI: {fileID: 0}
   cloakedMaterial:
   - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
   decloakedMaterial:
@@ -843,6 +845,22 @@ MonoBehaviour:
   footSteps:
   - {fileID: 8300000, guid: 826d13b1f4063004aa64345e6555671f, type: 3}
   - {fileID: 8300000, guid: a8ac10dda458ba442b50837886ae5188, type: 3}
+--- !u!114 &1852754742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260457720482682410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d541b2cfae5fb448e5600364a6f773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depletedDelay: 2
+  chargeRate: 20
+  powerUsage: 10
+  Gauge_UI: {fileID: 0}
 --- !u!1001 &1145118361382403791
 PrefabInstance:
   m_ObjectHideFlags: 0
