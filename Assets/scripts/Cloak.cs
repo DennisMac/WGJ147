@@ -80,7 +80,7 @@ public class Cloak : MonoBehaviour
         {
             aicc.SetTarget(this.transform);
         }
-        //Gauge_UI = FindObjectOfType<Hourglass>();
+        Gauge_UI = FindObjectOfType<Hourglass>();
         skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
 
         meshRenderers = GetComponentsInChildren<MeshRenderer>();

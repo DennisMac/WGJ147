@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Hourglass : MonoBehaviour
+public class Hourglass2 : MonoBehaviour
 {
     float maxFill = 100f;
     float currentFill = 50f;
@@ -18,4 +18,6 @@ public class Hourglass : MonoBehaviour
         topSand.fillAmount = 0.5f+ fillAmount/200f;
         bottomSand.fillAmount = 0.5f - fillAmount/200f;
     }
+
+
 }
