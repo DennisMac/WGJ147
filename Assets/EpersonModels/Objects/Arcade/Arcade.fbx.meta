@@ -3,12 +3,7 @@ guid: fb350a9f8f493bb479bf7e1db277b6b7
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Arcade
-    second: {fileID: 2100000, guid: 98dea54c76f6f934ea831a826138d217, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
