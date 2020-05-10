@@ -51,7 +51,7 @@ public class MechController : MonoBehaviour {
     {
         float forward = Vector3.Dot((transform.position - lastPosition), transform.forward);
         forward = Mathf.Clamp(forward, 0, 1f);
-        anim.SetFloat("Forward", forward*animSpeed);
+        anim.SetFloat("Forward", forward * animSpeed);
         lastPosition = transform.position;
     }
 
@@ -64,7 +64,7 @@ public class MechController : MonoBehaviour {
         Vector3 direction = (target.position - transform.position).normalized;
 
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime*5); //slow he's a mech
+		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5); //slow he's a mech
 	}
 
 	void OnDrawGizmosSelected ()
