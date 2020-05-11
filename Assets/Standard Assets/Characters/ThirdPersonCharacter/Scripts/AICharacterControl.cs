@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
@@ -7,6 +8,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof (ThirdPersonCharacter))]
     public class AICharacterControl : MonoBehaviour
     {
+        public static List<Transform> waypoints = new List<Transform>();
         AudioSource audioSource;
         [SerializeField]
         AudioClip[] audioClips;
@@ -44,6 +46,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 	        agent.updateRotation = false;
 	        agent.updatePosition = true;
+            if (patrolPoints[0] == null)
+            {
+                patrolPoints[0] = AICharacterControl.waypoints[UnityEngine.Random.Range(0, waypoints.Count - 1)];
+                patrolPoints[1] = AICharacterControl.waypoints[UnityEngine.Random.Range(0, waypoints.Count - 1)];
+            }
+            else
+            {
+                foreach (Transform t in patrolPoints)
+                {
+                    waypoints.Add(t);
+                }
+            }
+            Transform player = FindObjectOfType<ThirdPersonUserControl>().transform;
+            if (player) target = player;
         }
 
         float idleTime = 0f;

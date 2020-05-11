@@ -11,6 +11,7 @@ public class EnemyDamage : MonoBehaviour
     public GameObject[] bodyParts;
     List<GameObject> bodyPartsList;
     public GameObject delayedExplosionPrefab;
+    public GameObject deliveryCrate;
 
     public void Damage( float damage)
     {
@@ -33,6 +34,10 @@ public class EnemyDamage : MonoBehaviour
                 Cloak.aiCharacterControl.Remove(this.GetComponent<AICharacterControl>());
                 Destroy(this.gameObject);
                 Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+                if (deliveryCrate != null)//necessary for roller bots that dont respawn yet
+                {
+                    Instantiate(deliveryCrate, transform.position + 5 * Vector3.up, Quaternion.identity);
+                }
             }
         }
     }

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ObjectDestroyer : MonoBehaviour
 {
+    public float minDelay = 1f;
+    public float maxDelay = 3f;
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("DestroyMe", Random.Range(1f,3f));
+        Invoke("DestroyMe", Random.Range(minDelay, maxDelay));
     }
 
     void DestroyMe()
