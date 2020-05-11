@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static bool godMode = false;
     Slider healthSlider;
     public GameObject ragdollPrefab;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamageHealth(int damage)
     {
+        if (godMode) return;
         healthSlider.value -= damage;
         if (healthSlider.value <= 0)
         {
