@@ -15,7 +15,7 @@ public class Cloak : MonoBehaviour
     [SerializeField]
     float chargeRate = 10f;
 
-    public static float powerUsage = 2f; // static to make it easy to cheat
+    public static float powerUsage = 10f; // static to make it easy to cheat
 
     [SerializeField]
     Hourglass Gauge_UI;

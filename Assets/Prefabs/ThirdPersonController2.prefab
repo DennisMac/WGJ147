@@ -704,9 +704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37e791fcf11a42439eb5a717fe12676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depletedDelay: 2
+  depletedDelay: 10
   chargeRate: 20
-  powerUsage: 10
   Gauge_UI: {fileID: 0}
   cloakedMaterial:
   - {fileID: 2100000, guid: 41065db740222594995e47e6f62068d8, type: 2}
@@ -857,9 +856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d541b2cfae5fb448e5600364a6f773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depletedDelay: 2
+  depletedDelay: 10
   chargeRate: 20
-  powerUsage: 10
   Gauge_UI: {fileID: 0}
 --- !u!1001 &1145118361382403791
 PrefabInstance:
