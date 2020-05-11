@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    LevelExit levelExit;
     public BoxCollider exitCollider;
     // Start is called before the first frame update
     void Start()
     {
-        exitCollider.enabled = false;
+        levelExit = GetComponentInParent<LevelExit>();        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            exitCollider.enabled = true;
+            levelExit.DoorLocked = false;
             Destroy(this.gameObject);
         }
     }

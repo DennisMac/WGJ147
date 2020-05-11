@@ -430,6 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3d391f5ae1df94281aaf7237bc117a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  findKeyText: {fileID: 0}
   levelToLoad: LevelTestMenu
 --- !u!1001 &3233926322584188457
 PrefabInstance:
