@@ -14,8 +14,7 @@ public class TimeDialator : MonoBehaviour
     float currentEnergy = 50;
     [SerializeField]
     float chargeRate = 20f;
-    [SerializeField]
-    float powerUsage = 10f;
+    public static float powerUsage = 10f;
     [SerializeField]
     Hourglass2 Gauge_UI;
 
