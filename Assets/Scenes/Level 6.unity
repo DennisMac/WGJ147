@@ -1767,6 +1767,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TiledGround
       objectReference: {fileID: 0}
+    - target: {fileID: 8366369316072767350, guid: 8c9b0b4ac168bd04fa6804e1919f5d54,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8366369316072767351, guid: 8c9b0b4ac168bd04fa6804e1919f5d54,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1775,7 +1780,7 @@ PrefabInstance:
     - target: {fileID: 8366369316072767351, guid: 8c9b0b4ac168bd04fa6804e1919f5d54,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8366369316072767351, guid: 8c9b0b4ac168bd04fa6804e1919f5d54,
         type: 3}
