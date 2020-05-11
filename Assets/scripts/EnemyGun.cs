@@ -14,11 +14,14 @@ public class EnemyGun : MonoBehaviour
     public GameObject projectilePrefab;
     public float range = 15;
     public float aimSpeed = 20f;
+    private Vector3 offset = new Vector3(0.1f, 0, 0);
+    public float barrelLength = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<ThirdPersonUserControl>().transform;
+        if (!EyeballGun) offset = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -56,7 +59,7 @@ public class EnemyGun : MonoBehaviour
     
     public void Fire()
     {
-        Invoke("FireWeapon", 0);
+        FireWeapon();
         Invoke("FireWeapon", repeatDelay);
         Invoke("FireWeapon", repeatDelay * 2f);
         if (EyeballGun)
@@ -68,10 +71,9 @@ public class EnemyGun : MonoBehaviour
         fireDelay = 2f;
     }
 
-    Vector3 offset = new Vector3(.1f, 0, 0); //line up with the barrel of gun
     void FireWeapon()
     {
         offset = -offset;
-        Instantiate(projectilePrefab, transform.position + transform.rotation * offset, transform.rotation);
+        Instantiate(projectilePrefab, transform.position + transform.rotation * (offset + Vector3.forward * barrelLength), transform.rotation);
     }
 }
