@@ -7,7 +7,7 @@ public class Cloak : MonoBehaviour
 {
     //bool cloaked = false;
     bool depleted = false;
-    [SerializeField]
+    //[SerializeField]
     float depletedDelay = 2f;
     float sinceDepleted = 0f;
     float maxEnergy = 100;

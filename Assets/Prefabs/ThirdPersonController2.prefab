@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37e791fcf11a42439eb5a717fe12676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depletedDelay: 10
+  depletedDelay: 2
   chargeRate: 20
   Gauge_UI: {fileID: 0}
   cloakedMaterial:
