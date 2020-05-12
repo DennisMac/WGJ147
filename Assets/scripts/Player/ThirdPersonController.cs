@@ -29,15 +29,7 @@ public class ThirdPersonController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         //if escape key (default) is pressed, pause the game (feel free to change this)
-        if (Input.GetButton("Cancel"))
-        {
-            //flip the isPaused state, hide/unhide the cursor, flip the lock state
-            isPaused = !isPaused;
-            Cursor.visible = !Cursor.visible;
-            Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ?
-            CursorLockMode.None : CursorLockMode.Locked;
-            System.Threading.Thread.Sleep(200);
-        }
+        
 
         if(!isPaused)
         {

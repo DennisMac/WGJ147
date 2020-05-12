@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cheats : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Cheats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Vector3 keyLocation  = FindObjectOfType<Key>().transform.position;
+            Vector3 keyLocation = FindObjectOfType<SteamPunkKey>().transform.position;
             FindObjectOfType<PlayerHealth>().transform.position = keyLocation + Vector3.one;
 
         }
@@ -25,7 +26,10 @@ public class Cheats : MonoBehaviour
             FindObjectOfType<PlayerHealth>().transform.position = exitLocation + Vector3.one;
 
         }
-
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene("LevelTestMenu");
+        }
 
         //God mode
         if (Input.GetKeyDown(KeyCode.Alpha1))

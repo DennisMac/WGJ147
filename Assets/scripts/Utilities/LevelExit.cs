@@ -14,12 +14,21 @@ public class LevelExit : MonoBehaviour
     private void Start()
     {
         findKeyText = GameObject.FindWithTag("FindtheKeyText");
-        findKeyText.SetActive(false);
+       // if (findKeyText != null) findKeyText.SetActive(false);
+        Invoke("HideItAgainBecauseBrowserScrewsUp", 2);
+    }
+    private void HideItAgainBecauseBrowserScrewsUp()
+    {
+        findKeyText = GameObject.FindWithTag("FindtheKeyText");
+        if (findKeyText != null) findKeyText.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        findKeyText.SetActive(false);
+        if (other.tag == "Player")
+        {
+            findKeyText.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

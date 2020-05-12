@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionPrefab: {fileID: 100010, guid: 9d43ab7898a565a4da72daba38071c0d, type: 3}
-  health: 100
+  health: 20
   bodyParts:
   - {fileID: 5223099884235060705}
   - {fileID: 5979336725694116324}
