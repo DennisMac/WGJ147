@@ -12,6 +12,22 @@ public class Cheats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Vector3 keyLocation  = FindObjectOfType<Key>().transform.position;
+            FindObjectOfType<PlayerHealth>().transform.position = keyLocation + Vector3.one;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Vector3 exitLocation = FindObjectOfType<LevelExit>().transform.position;
+            FindObjectOfType<PlayerHealth>().transform.position = exitLocation + Vector3.one;
+
+        }
+
+
+        //God mode
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             PlayerHealth.godMode = !PlayerHealth.godMode;

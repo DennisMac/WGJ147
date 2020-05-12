@@ -36,7 +36,7 @@ public class EnemyDamage : MonoBehaviour
                 Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
                 if (deliveryCrate != null)//necessary for roller bots that dont respawn yet
                 {
-                    Instantiate(deliveryCrate, transform.position + 5 * Vector3.up, Quaternion.identity);
+                    Instantiate(deliveryCrate, transform.position + 8 * Vector3.up, Quaternion.identity);
                 }
             }
         }

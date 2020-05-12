@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class LevelExit : MonoBehaviour
 {
-    public GameObject findKeyText;
+    GameObject findKeyText;
     public string levelToLoad ="01_Scene";
     private bool doorLocked = true;
     public bool DoorLocked { get { return doorLocked; } set { doorLocked = value; } }
 
     private void Start()
     {
+        findKeyText = GameObject.FindWithTag("FindtheKeyText");
         findKeyText.SetActive(false);
     }
 
