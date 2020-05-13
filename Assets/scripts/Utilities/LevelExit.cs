@@ -10,12 +10,14 @@ public class LevelExit : MonoBehaviour
     public string levelToLoad ="01_Scene";
     private bool doorLocked = true;
     public bool DoorLocked { get { return doorLocked; } set { doorLocked = value; } }
+    AudioSource audioSource;
 
     private void Start()
     {
         findKeyText = GameObject.FindWithTag("FindtheKeyText");
-       // if (findKeyText != null) findKeyText.SetActive(false);
         Invoke("HideItAgainBecauseBrowserScrewsUp", 2);
+
+        audioSource = GetComponent<AudioSource>();
     }
     private void HideItAgainBecauseBrowserScrewsUp()
     {
@@ -44,6 +46,8 @@ public class LevelExit : MonoBehaviour
             {
                 GetComponentInChildren<Animator>().SetTrigger("interact");
                 //dmc todo: make a sound and load level
+                if(!audioSource.isPlaying) audioSource.Play();
+
                 Invoke("LoadLevelNow", 1);
             }
         }
