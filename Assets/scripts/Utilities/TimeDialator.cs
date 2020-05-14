@@ -28,6 +28,7 @@ public class TimeDialator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale <= Mathf.Epsilon) return;
         if (depleted)
         { //charge a little before you can re-engage
             if ((sinceDepleted += Time.deltaTime) > depletedDelay) depleted = false;

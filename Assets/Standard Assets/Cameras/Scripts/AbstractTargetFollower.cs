@@ -35,6 +35,7 @@ namespace UnityStandardAssets.Cameras
 
         private void FixedUpdate()
         {
+            if (Time.timeScale <= Mathf.Epsilon) return;
             // we update from here if updatetype is set to Fixed, or in auto mode,
             // if the target has a rigidbody, and isn't kinematic.
             if (m_AutoTargetPlayer && (m_Target == null || !m_Target.gameObject.activeSelf))
@@ -50,6 +51,7 @@ namespace UnityStandardAssets.Cameras
 
         private void LateUpdate()
         {
+            if (Time.timeScale <= Mathf.Epsilon) return;
             // we update from here if updatetype is set to Late, or in auto mode,
             // if the target does not have a rigidbody, or - does have a rigidbody but is set to kinematic.
             if (m_AutoTargetPlayer && (m_Target == null || !m_Target.gameObject.activeSelf))
@@ -65,6 +67,7 @@ namespace UnityStandardAssets.Cameras
 
         public void ManualUpdate()
         {
+            if (Time.timeScale <= Mathf.Epsilon) return;
             // we update from here if updatetype is set to Late, or in auto mode,
             // if the target does not have a rigidbody, or - does have a rigidbody but is set to kinematic.
             if (m_AutoTargetPlayer && (m_Target == null || !m_Target.gameObject.activeSelf))

@@ -452,10 +452,11 @@ AudioSource:
   m_GameObject: {fileID: 6539483886598795466}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4202879364013707892, guid: a3d2667733191e949bab12fec6a33023,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5e8b2152e6f7a8b4e88ed0ddf363c85f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -704,7 +705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37e791fcf11a42439eb5a717fe12676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depletedDelay: 2
   chargeRate: 20
   Gauge_UI: {fileID: 0}
   cloakedMaterial:
@@ -742,10 +742,11 @@ AudioSource:
   m_GameObject: {fileID: 8260457720482682410}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4202879364013707892, guid: a3d2667733191e949bab12fec6a33023,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.45
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -856,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d541b2cfae5fb448e5600364a6f773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depletedDelay: 10
+  depletedDelay: 2
   chargeRate: 20
   Gauge_UI: {fileID: 0}
 --- !u!1001 &1145118361382403791

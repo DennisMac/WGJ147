@@ -145,6 +145,7 @@ MonoBehaviour:
   health: 1000
   bodyParts: []
   delayedExplosionPrefab: {fileID: 0}
+  deliveryCrate: {fileID: 0}
 --- !u!82 &1031879878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -154,10 +155,11 @@ AudioSource:
   m_GameObject: {fileID: 2367599372954046152}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4202879364013707892, guid: a3d2667733191e949bab12fec6a33023,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 754604c3ee6d8ad4bb5afe5e41c0af10, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.202
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

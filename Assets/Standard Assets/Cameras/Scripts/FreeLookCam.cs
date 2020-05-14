@@ -46,7 +46,8 @@ namespace UnityStandardAssets.Cameras
 
         float lastUpdate = 0f;
         protected void Update()
-        {   
+        {
+            if (Time.timeScale <= Mathf.Epsilon) return;
             HandleRotationMovement();
             if (m_LockCursor && Input.GetMouseButtonUp(0))
             {
@@ -54,15 +55,7 @@ namespace UnityStandardAssets.Cameras
                 Cursor.visible = !m_LockCursor;
             }
 
-
             ManualUpdate();
-            //lastUpdate += (Time.deltaTime / Time.timeScale);
-            //if (lastUpdate > 0.014)
-            //{
-            //    ManualUpdate();
-            //    lastUpdate = 0f;
-            //}
-
         }
 
 

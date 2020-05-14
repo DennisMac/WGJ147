@@ -29,10 +29,8 @@ public class GunController : MonoBehaviour {
     }
 	void OnGUI()
 	{
-		Cursor.visible = false;
-		//GUI.DrawTexture(new Rect(Event.current.mousePosition.x - cursorSize/2, 
-		//                     Event.current.mousePosition.y - cursorSize/2, 
-		//                     cursorSize, cursorSize), cursorTexture);
+        if (Time.timeScale <= Mathf.Epsilon) return;
+        Cursor.visible = false;
         GUI.DrawTexture(new Rect(sightPosition.x - cursorSize / 2,
                              sightPosition.y - cursorSize / 2,
                              cursorSize, cursorSize), cursorTexture);
@@ -42,6 +40,7 @@ public class GunController : MonoBehaviour {
 	RaycastHit hit;
 	void Update() 
 	{
+        if (Time.timeScale <= Mathf.Epsilon) return;
         transform.position = mounting.transform.position;
         Ray ray = Camera.main.ScreenPointToRay(sightPosition);//Camera.main.ScreenPointToRay(Input.mousePosition);
         int layerMask = 1 << 8;
