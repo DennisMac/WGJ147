@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class PausePanel : MonoBehaviour
 {
     public GameObject pausePanel;
+ 
 
     private void OnDestroy()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = oldTimeScale;
     }
 
     void Start()
     {
-   
+
     }
 
     List<AudioSource> audioSourcesToPause = new List<AudioSource>();
@@ -22,7 +23,7 @@ public class PausePanel : MonoBehaviour
     void Update()
     {
   
-        if (Input.GetKeyDown(KeyCode.P) ||  Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.P) ||  Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.Escape) )
         {
             Global.IsPaused = !Global.IsPaused;
             if (Global.IsPaused == true)
@@ -53,7 +54,8 @@ public class PausePanel : MonoBehaviour
                 }
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.None;
-                resumeButton();
+                Global.IsPaused = false;
+                pausePanel.SetActive(false);
             }
         }  
         
@@ -61,6 +63,13 @@ public class PausePanel : MonoBehaviour
 
     public void resumeButton()
     {
+        Time.timeScale = oldTimeScale;
+        foreach (AudioSource audioSource in audioSourcesToPause)
+        {
+            audioSource.UnPause();
+        }
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
         Global.IsPaused = false;
         pausePanel.SetActive(false);
     }
