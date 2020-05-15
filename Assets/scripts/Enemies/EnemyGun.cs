@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
+using Assets.Standard_Assets.Utility;
 
 public class EnemyGun : MonoBehaviour
 {

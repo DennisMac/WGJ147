@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.Standard_Assets.Utility;
+
 public class PausePanel : MonoBehaviour
 {
     public GameObject pausePanel;
