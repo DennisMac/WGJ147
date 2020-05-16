@@ -46,7 +46,11 @@ public class LevelExit : MonoBehaviour
             {
                 GetComponentInChildren<Animator>().SetTrigger("interact");
                 //dmc todo: make a sound and load level
-                if(!audioSource.isPlaying) audioSource.Play();
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
+                    audioSource.Play();
+                }
 
                 Invoke("LoadLevelNow", 1);
             }

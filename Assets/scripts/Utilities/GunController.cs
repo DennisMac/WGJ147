@@ -42,6 +42,8 @@ public class GunController : MonoBehaviour {
 	void Update() 
 	{
         if (Time.timeScale <= Mathf.Epsilon) return;
+        audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
+
         transform.position = mounting.transform.position;
         Ray ray = Camera.main.ScreenPointToRay(sightPosition);//Camera.main.ScreenPointToRay(Input.mousePosition);
         int layerMask = 1 << 8;
@@ -60,6 +62,7 @@ public class GunController : MonoBehaviour {
                     wasCloaked = Global.PlayerCloaked;
                     Global.PlayerCloaked = false;
                     Global.PlayerFiring = true;
+                    
                     audioSource.Play();
                 }
                 if (Input.GetButtonUp("Fire1"))

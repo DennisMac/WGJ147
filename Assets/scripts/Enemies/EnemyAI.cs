@@ -44,6 +44,7 @@ public class EnemyAI : MonoBehaviour
 
         if (audioSource != null)
         {
+            audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
             if (rbody.velocity.sqrMagnitude > 0.1f)
             {
                 if(!audioSource.isPlaying) audioSource.Play();

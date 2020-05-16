@@ -127,6 +127,7 @@ public class Cloak : MonoBehaviour
         {
             if (!wasCloaked)
             {
+                audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
                 audioSource.PlayOneShot(cloakClip);
                 GameObject sparkles = Instantiate(sparklesPrefab, transform.position + Vector3.up + Camera.main.transform.forward*0.25f , Quaternion.identity);
                 sparkles.transform.parent = this.transform;

@@ -60,6 +60,7 @@ public class EnemyGun : MonoBehaviour
     
     public void Fire()
     {
+        
         FireWeapon();
         Invoke("FireWeapon", repeatDelay);
         Invoke("FireWeapon", repeatDelay * 2f); //dmc todo: this is lazy, do it proper so that slow motion will work
@@ -74,6 +75,7 @@ public class EnemyGun : MonoBehaviour
 
     void FireWeapon()
     {
+        if (Projectile.count > 7) return;
         offset = -offset;
         Instantiate(projectilePrefab, transform.position + transform.rotation * (offset + Vector3.forward * barrelLength), transform.rotation);
     }

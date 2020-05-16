@@ -22,6 +22,7 @@ public class AnimationRecievers : MonoBehaviour
         if (Global.PlayerTransform == null) return;
         if ((Global.PlayerTransform.position - transform.position).sqrMagnitude < 50)
         {
+            audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
             audioSource.PlayOneShot(footSteps[UnityEngine.Random.Range(0, footSteps.Length)]);
         }
     }
@@ -30,6 +31,7 @@ public class AnimationRecievers : MonoBehaviour
         if (Global.PlayerTransform == null) return;
         if ((Global.PlayerTransform.position - transform.position).sqrMagnitude < 25)
         {
+            audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
             audioSource.PlayOneShot(footSteps[UnityEngine.Random.Range(0, footSteps.Length)]);
         }
     }

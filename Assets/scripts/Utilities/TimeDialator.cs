@@ -8,6 +8,21 @@ public class TimeDialator : MonoBehaviour
 {
     bool depleted = false;
     bool poweredOn = false;
+    bool PoweredOn
+    {
+        get { return poweredOn; }
+        set
+        {
+            if (poweredOn == value) return;
+            poweredOn = value;
+            if (poweredOn)
+                AudioSource.PlayOneShot(timeWarpClips[0]);
+            else
+                AudioSource.PlayOneShot(timeWarpClips[1]);
+
+        }
+    }
+
     [SerializeField]
     float depletedDelay = 2f;
     float sinceDepleted = 0f;
@@ -19,11 +34,14 @@ public class TimeDialator : MonoBehaviour
     [SerializeField]
     Hourglass2 Gauge_UI;
     public AudioMixer masterMixer;
-
+    public GameObject WarpedVisual;
+    public AudioSource AudioSource;
+    public AudioClip[] timeWarpClips;
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
         Gauge_UI = FindObjectOfType<Hourglass2>();
     }
 
@@ -36,28 +54,28 @@ public class TimeDialator : MonoBehaviour
         { //charge a little before you can re-engage
             if ((sinceDepleted += Time.deltaTime) > depletedDelay) depleted = false;
             currentEnergy += Time.deltaTime * chargeRate;
-            poweredOn = false;
+            PoweredOn = false;
         }
         else
         {
             if (Input.GetKeyDown("f"))
             {
-                poweredOn = !poweredOn;
+                PoweredOn = !poweredOn;
             }
         }
 
-            if (currentEnergy <= 0)
-            {
-                depleted = true;
-                poweredOn = false;
-                sinceDepleted = 0f;
-            }
+        if (currentEnergy <= 0)
+        {
+            depleted = true;
+            PoweredOn = false;
+            sinceDepleted = 0f;
+        }
 
-        
+
         if (!poweredOn)
         {
             //
-            Time.timeScale = Mathf.Clamp(Time.timeScale + Time.unscaledDeltaTime, 0.01f, 1f);
+            Time.timeScale = Mathf.Clamp(Time.timeScale + Time.unscaledDeltaTime/2f, 0.01f, 1f);
             currentEnergy += Time.deltaTime * chargeRate;
         }
         else
@@ -79,7 +97,11 @@ public class TimeDialator : MonoBehaviour
         currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
         Gauge_UI.SetFill(currentEnergy);
 
-        masterMixer.SetFloat("SfxPitch", Time.timeScale);
+        // had to hack each audiosource independently since mixer doesnt work on webgl
+        // masterMixer.SetFloat("SfxPitch", Time.timeScale);
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
+
+        WarpedVisual.SetActive(Time.timeScale < 0.9f);
+
     }
 }
