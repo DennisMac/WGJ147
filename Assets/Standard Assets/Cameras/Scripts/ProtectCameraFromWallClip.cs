@@ -42,6 +42,10 @@ namespace UnityStandardAssets.Cameras
             // initially set the target distance
             float targetDist = m_OriginalDist;
 
+            Camera.main.fieldOfView = 60f + 60f * (1 - Time.timeScale);
+            targetDist *=  (.25f +  0.75f * Time.timeScale);
+
+
             m_Ray.origin = m_Pivot.position + m_Pivot.forward*sphereCastRadius;
             m_Ray.direction = -m_Pivot.forward;
 
@@ -106,7 +110,7 @@ namespace UnityStandardAssets.Cameras
             // hit something so move the camera to a better position
             protecting = hitSomething;
             m_CurrentDist = Mathf.SmoothDamp(m_CurrentDist, targetDist, ref m_MoveVelocity,
-                                           m_CurrentDist > targetDist ? clipMoveTime : returnTime);
+                                           m_CurrentDist > targetDist ? clipMoveTime/Time.timeScale : returnTime);
             m_CurrentDist = Mathf.Clamp(m_CurrentDist, closestDistance, m_OriginalDist);
             m_Cam.localPosition = -Vector3.forward*m_CurrentDist;
         }

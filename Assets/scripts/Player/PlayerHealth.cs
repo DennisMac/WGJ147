@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value -= damage;
         if (healthSlider.value <= 0)
         {
+            Time.timeScale = 1f;
             GameObject ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation);
             UnityStandardAssets.Cameras.FreeLookCam.StaticRestartScene(2f);
             

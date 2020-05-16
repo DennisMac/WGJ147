@@ -146,7 +146,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// which affects the movement speed because of the root motion.
 			if (m_IsGrounded && move.magnitude > 0)
 			{
-				m_Animator.speed = m_AnimSpeedMultiplier;
+				m_Animator.speed = m_AnimSpeedMultiplier/(tag == "Player" ? Time.timeScale: 1f);
 			}
 			else
 			{
@@ -163,7 +163,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// apply extra gravity from multiplier:
 			Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
 			m_Rigidbody.AddForce(extraGravityForce);
-            m_Rigidbody.AddForce(20f * (  move));
+            m_Rigidbody.AddForce(20f * move);
 
 			m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
 

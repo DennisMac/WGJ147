@@ -48,6 +48,7 @@ namespace UnityStandardAssets.Cameras
         protected void Update()
         {
             if (Time.timeScale <= Mathf.Epsilon) return;
+
             HandleRotationMovement();
             if (m_LockCursor && Input.GetMouseButtonUp(0))
             {
@@ -55,7 +56,7 @@ namespace UnityStandardAssets.Cameras
                 Cursor.visible = !m_LockCursor;
             }
 
-            ManualUpdate();
+            ManualUpdate();           
         }
 
 
@@ -70,7 +71,7 @@ namespace UnityStandardAssets.Cameras
         {
             if (m_Target == null) return;
             // Move the rig towards target position.
-            transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime*m_MoveSpeed);
+            transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime * m_MoveSpeed/Time.timeScale);
         }
 
 

@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-4885016420491322121
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f196fad993547024eb6f9105debb7131
+  m_EffectName: Pitch Shifter
+  m_MixLevel: fa66a2b26c99a944e96b75d4c5bb722e
+  m_Parameters:
+  - m_ParameterName: Pitch
+    m_GUID: 05f4aa5b3232c514187d30213dca8c55
+  - m_ParameterName: FFT size
+    m_GUID: 84d4435fc80f31e42ba213f83adbee5e
+  - m_ParameterName: Overlap
+    m_GUID: 07fed7e814f1dbd46a76b2b1de159d64
+  - m_ParameterName: Max channels
+    m_GUID: 75c190393d3aca241b876f70b9c46e71
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-4847595555121570559
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -67,6 +89,8 @@ AudioMixerController:
     name: MusicVolume
   - guid: c817bc779a2002845955d22163b5f580
     name: SFX
+  - guid: 05f4aa5b3232c514187d30213dca8c55
+    name: SfxPitch
   m_AudioMixerGroupViews:
   - guids:
     - 63d290017f6e90d4fbf307385961143b
@@ -138,6 +162,7 @@ AudioMixerGroupController:
   m_Pitch: b789bb4eb994cf94a9f917d6f01fcbcd
   m_Send: 00000000000000000000000000000000
   m_Effects:
+  - {fileID: -4885016420491322121}
   - {fileID: -3022619426737768416}
   m_UserColorIndex: 0
   m_Mute: 0

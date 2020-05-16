@@ -62,7 +62,7 @@ public class EnemyGun : MonoBehaviour
     {
         FireWeapon();
         Invoke("FireWeapon", repeatDelay);
-        Invoke("FireWeapon", repeatDelay * 2f);
+        Invoke("FireWeapon", repeatDelay * 2f); //dmc todo: this is lazy, do it proper so that slow motion will work
         if (EyeballGun)
         {
             Invoke("FireWeapon", repeatDelay * 3f);
