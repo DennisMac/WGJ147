@@ -3594,6 +3594,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2866533642608690282, guid: 5e85f6cdbb345464ca63d3f4002a3b87,
+        type: 3}
+      propertyPath: WarpedVisual
+      value: 
+      objectReference: {fileID: 1201675907}
     - target: {fileID: 2866533642608690283, guid: 5e85f6cdbb345464ca63d3f4002a3b87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4041,6 +4046,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7911680561790192111, guid: 266f89c9c35b27c4ca7ae1faffa44eff,
     type: 3}
   m_PrefabInstance: {fileID: 2972602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1201675907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1755444616, guid: 49a0e923d39ec3c4c8bb97699e2f2903,
+    type: 3}
+  m_PrefabInstance: {fileID: 1222929536}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1222929536
 PrefabInstance:

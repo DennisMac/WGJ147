@@ -78,6 +78,7 @@ public class PausePanel : MonoBehaviour
 
     public void exitButton()
     {
+        Application.Quit();
         Global.IsPaused = false;
         pausePanel.SetActive(false);
 
