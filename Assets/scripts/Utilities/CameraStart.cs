@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Cameras;
+using UnityStandardAssets.Characters.ThirdPerson;
+
 public class CameraStart : MonoBehaviour
 {
     Vector3 originalPosition;
@@ -10,12 +12,15 @@ public class CameraStart : MonoBehaviour
     public Vector3 StartPosition = new Vector3(0f, 40, 40);
     public FreeLookCam freeLookCam;
     public ProtectCameraFromWallClip protectCameraFromWallClip;
+    ThirdPersonUserControl thirdPersonUserControl;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        thirdPersonUserControl = FindObjectOfType<ThirdPersonUserControl>();
+        thirdPersonUserControl.enabled = false;
         originalPosition = transform.position;
         originalRotation = transform.rotation;
         transform.position = StartPosition;
@@ -35,6 +40,7 @@ public class CameraStart : MonoBehaviour
             this.enabled = false;
             freeLookCam.enabled = true;
             protectCameraFromWallClip.enabled = true;
+            thirdPersonUserControl.enabled = true;
         }
     }
 }

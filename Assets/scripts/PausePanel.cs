@@ -86,4 +86,11 @@ public class PausePanel : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void SetMouseSensitivity(float value)
+    {
+        Global.MouseSensitivity = value;
+    }
+
+
+
 }

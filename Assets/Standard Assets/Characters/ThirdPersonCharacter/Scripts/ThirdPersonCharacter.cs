@@ -172,7 +172,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (attemptDoubleJump && !doubleJumpDisabled)
             {
                 doubleJumpDisabled = true;
-                if (m_Rigidbody.velocity.y > 0 && m_Rigidbody.velocity.y < 1f)
+                if (m_Rigidbody.velocity.y > 0 && m_Rigidbody.velocity.y < 1.5f)
                 {
                     m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
                     m_IsGrounded = false;

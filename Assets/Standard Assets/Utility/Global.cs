@@ -12,7 +12,7 @@ namespace Assets.Standard_Assets.Utility
         public static Transform PlayerTransform;
 
         public static AudioSource musicAudioSource;
-
+        public static float MouseSensitivity = 0.5f;
 
 
         public static bool IsPaused
