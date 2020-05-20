@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     Vector3 originalPosition;
     Rigidbody rbody;
     AudioSource audioSource;
+    public GameObject gun;
     void Start()
     {
         playerCloak = FindObjectOfType<Cloak>();
@@ -24,6 +25,7 @@ public class EnemyAI : MonoBehaviour
         originalPosition = transform.position;
         rbody = GetComponentInChildren<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        gun.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -35,11 +37,23 @@ public class EnemyAI : MonoBehaviour
             Physics.Raycast(transform.position, (target.position - transform.position), out hit, 100);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.layer == 8 && hit.distance > 5)
+                if (hit.collider.gameObject.layer == 8)
                 {
-                    rbody.AddForce((target.position - transform.position) * speed);
+                    if (hit.distance > 5)
+                    {
+                        gun.SetActive(true);
+                        rbody.AddForce((target.position - transform.position) * speed);
+                    }
+                }
+                else
+                {
+                    gun.SetActive(false);
                 }
             }
+        }
+        else
+        {
+            gun.SetActive(false);
         }
 
         if (audioSource != null)

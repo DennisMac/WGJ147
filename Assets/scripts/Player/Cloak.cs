@@ -42,13 +42,31 @@ public class Cloak : MonoBehaviour
         get { return Global.PlayerCloaked; }
         set
         {
+            if (Global.PlayerCloaked == value) return;
+  
             Global.PlayerCloaked = value;
             if (Global.PlayerCloaked)
             {
                 foreach (AICharacterControl aicc in aiCharacterControl)
                 {
                     aicc.SetTarget(null);
-                }                
+                }
+                audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
+                audioSource.PlayOneShot(cloakClip);
+                GameObject sparkles = Instantiate(sparklesPrefab, transform.position + Vector3.up + Camera.main.transform.forward * 0.25f, Quaternion.identity);
+                sparkles.transform.parent = this.transform;
+                skinnedMeshRenderer.materials = cloakedMaterial;
+                foreach (MeshRenderer mr in meshRenderers)
+                {
+                    if (mr.materials.Length == 0)
+                    {
+                        mr.material = cloakedMaterial[0];
+                    }
+                    else
+                    {
+                        mr.materials = cloakedMaterial;
+                    }
+                }
             }
             else
             {
@@ -64,6 +82,22 @@ public class Cloak : MonoBehaviour
                     {
                         aicc.SetTarget(null);
                     }
+                }
+
+
+                skinnedMeshRenderer.materials = decloakedMaterial;
+                int j = 0;
+                foreach (MeshRenderer mr in meshRenderers)
+                {
+                    if (mr.materials.Length == 0)
+                    {
+                        mr.material = decloackedExtraSingleMaterial[j];
+                    }
+                    else
+                    {
+                        mr.materials = decloakedExtraMaterials[j];
+                    }
+                    j++;
                 }
             }
         }
@@ -119,20 +153,12 @@ public class Cloak : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 Cloaked = !Cloaked;
-                if (Global.PlayerFiring) Cloaked = false;                
-            }
-        }
+            }                
+        }       
+
 
         if (Cloaked)
-        {
-            if (!wasCloaked)
-            {
-                audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
-                audioSource.PlayOneShot(cloakClip);
-                GameObject sparkles = Instantiate(sparklesPrefab, transform.position + Vector3.up + Camera.main.transform.forward*0.25f , Quaternion.identity);
-                sparkles.transform.parent = this.transform;
-                
-            }
+        {            
             currentEnergy -= Time.deltaTime * powerUsage;
             if (currentEnergy <= 0)
             {
@@ -140,38 +166,20 @@ public class Cloak : MonoBehaviour
                 Cloaked = false;
                 sinceDepleted = 0f;
             }
-            skinnedMeshRenderer.materials = cloakedMaterial;
-
-            foreach (MeshRenderer mr in meshRenderers)
+            if (Global.PlayerFiring)
             {
-                if (mr.materials.Length == 0)
-                {
-                    mr.material = cloakedMaterial[0];
-                }
-                else
-                {
-                    mr.materials = cloakedMaterial;
-                }
+                wasCloaked = Cloaked || wasCloaked;
+                Cloaked = false;
             }
         }
         else
         {
-            currentEnergy += Time.deltaTime * chargeRate;
-            skinnedMeshRenderer.materials = decloakedMaterial;
-
-            int j = 0;
-            foreach (MeshRenderer mr in meshRenderers)
+            if (wasCloaked && !Global.PlayerFiring)
             {
-                if (mr.materials.Length == 0)
-                {
-                    mr.material = decloackedExtraSingleMaterial[j];
-                }
-                else
-                {
-                    mr.materials = decloakedExtraMaterials[j];
-                }
-                j++;
-            }            
+                Cloaked = true;
+                wasCloaked = false;
+            }
+            currentEnergy += Time.deltaTime * chargeRate;                 
         }
 
         currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
@@ -179,7 +187,7 @@ public class Cloak : MonoBehaviour
 
 
         //check line of sight on the enemies
-        if (!Cloaked)
+        if (!Cloaked && Random.Range(0,60) < 1) //do this every second or so
         {
             foreach (AICharacterControl aicc in aiCharacterControl)
             {
@@ -194,6 +202,5 @@ public class Cloak : MonoBehaviour
                 }
             }
         }
-        wasCloaked = Cloaked;
     }
 }

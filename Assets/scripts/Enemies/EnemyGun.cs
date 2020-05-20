@@ -75,7 +75,7 @@ public class EnemyGun : MonoBehaviour
 
     void FireWeapon()
     {
-        if (Projectile.count > 7) return;
+        if (Projectile.count > 7) return;//limit bullets alive for now. You should pool them
         offset = -offset;
         Instantiate(projectilePrefab, transform.position + transform.rotation * (offset + Vector3.forward * barrelLength), transform.rotation);
     }

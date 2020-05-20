@@ -16,7 +16,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public UnityEngine.AI.NavMeshAgent agent { get; private set; }             // the navmesh agent required for the path finding
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
         private Transform target;                                    // target to aim for
-
+        public GameObject gun;
+        public GameObject rigidHead;
 
         bool patrolling = false;
         bool Patrolling
@@ -31,6 +32,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     {
                         audioSource.PlayOneShot(audioClips[UnityEngine.Random.Range(0, audioClips.Length)]);                        
                     }
+
+                    rigidHead.SetActive(patrolling);
+                    gun.SetActive(!patrolling); //1 less monobehavior running all the time
+
                 }
             }
         }

@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     AudioClip[] audioClips;
     [SerializeField]
-    AudioSource audioSource;
+    AudioSource audioSource; //dmc todo: use the audiosource on the sfx manager
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +27,7 @@ public class Projectile : MonoBehaviour
         audioSource.pitch = 0.3f + 0.7f * Time.timeScale; //hack because mixer doesn't work in WebGL
         transform.parent.position += transform.parent.forward * Time.deltaTime * speed;
         lifeTime -= Time.deltaTime;        
-    }
-    private void Update()
-    {
+ 
         if (lifeTime <= 0)
         {
             Destroy(this.transform.parent.gameObject);

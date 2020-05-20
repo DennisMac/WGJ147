@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 2
+  gun: {fileID: 235267636167516542}
 --- !u!114 &2367599372954046257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +495,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8657d810e311f24bbd5b122f893efd4, type: 3}
+--- !u!1 &235267636167516542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2564995419966847624, guid: f8657d810e311f24bbd5b122f893efd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2367599371979693046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2367599372535052110
 PrefabInstance:
   m_ObjectHideFlags: 0

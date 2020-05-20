@@ -32,9 +32,4 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject); //temporary to show end
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

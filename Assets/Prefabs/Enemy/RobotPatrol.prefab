@@ -201,13 +201,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 8414723725971388381}
     m_Modifications:
     - target: {fileID: 1279012391, guid: 03197179e75fbe640b1821adca07a3f2, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 4202879364013707892, guid: a3d2667733191e949bab12fec6a33023,
-        type: 2}
-    - target: {fileID: 1279012391, guid: 03197179e75fbe640b1821adca07a3f2, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1876337401136089105, guid: 03197179e75fbe640b1821adca07a3f2,
         type: 3}
@@ -219,6 +214,11 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 4084511151068046775}
+    - target: {fileID: 2496473584974436197, guid: 03197179e75fbe640b1821adca07a3f2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3561482921563792774, guid: 03197179e75fbe640b1821adca07a3f2,
         type: 3}
       propertyPath: m_Name

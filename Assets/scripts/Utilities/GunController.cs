@@ -37,7 +37,6 @@ public class GunController : MonoBehaviour {
                              cursorSize, cursorSize), cursorTexture);
     }
 
-    bool wasCloaked = false;
 	RaycastHit hit;
 	void Update() 
 	{
@@ -55,23 +54,20 @@ public class GunController : MonoBehaviour {
             Ray ray2 = new Ray(transform.position, hit.point - transform.position);
             if (Physics.Raycast(ray2, out hit, 100, layerMask))
             {
+                transform.rotation = Quaternion.LookRotation(hit.point - this.transform.position);//point the gun
+
                 if (Input.GetButtonDown("Fire1"))
                 {
                     StopCoroutine("FireLaser");
                     StartCoroutine("FireLaser");
-                    wasCloaked = Global.PlayerCloaked;
-                    Global.PlayerCloaked = false;
-                    Global.PlayerFiring = true;
-                    
+                    Global.PlayerFiring = true;                    
                     audioSource.Play();
                 }
                 if (Input.GetButtonUp("Fire1"))
                 {
                     audioSource.Stop();
-                    Global.PlayerCloaked = wasCloaked;
                     Global.PlayerFiring = false;
                 }
-                transform.rotation = Quaternion.LookRotation(hit.point - this.transform.position);
                 if (hit.collider.tag == "Enemy" && Input.GetButton("Fire1"))
                 {
                     EnemyDamage enemy = hit.collider.gameObject.GetComponent<EnemyDamage>();
