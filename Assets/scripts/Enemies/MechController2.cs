@@ -33,6 +33,7 @@ public class MechController2 : MonoBehaviour
 
     void Update()
     {
+        if (playerCloak == null) return;
         float distance = Vector3.Distance(playerCloak.transform.position, transform.position);
         if (!playerCloak.IsCloaked && distance <= lookRadius && pathFinding <= 0)
         {

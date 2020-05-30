@@ -2047,6 +2047,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1262932230, guid: f206f9e1e07b9864f89cb9927de3a335, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.237
+      objectReference: {fileID: 0}
     - target: {fileID: 3233926321860131976, guid: f206f9e1e07b9864f89cb9927de3a335,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2106,16 +2110,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelExit
-      objectReference: {fileID: 0}
-    - target: {fileID: 3542257249718884837, guid: f206f9e1e07b9864f89cb9927de3a335,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.x
-      value: 6.54e-43
-      objectReference: {fileID: 0}
-    - target: {fileID: 3542257249718884837, guid: f206f9e1e07b9864f89cb9927de3a335,
-        type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 2.4761e-41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f206f9e1e07b9864f89cb9927de3a335, type: 3}
