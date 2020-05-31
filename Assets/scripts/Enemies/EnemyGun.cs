@@ -21,7 +21,12 @@ public class EnemyGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<ThirdPersonUserControl>().transform;
+        ThirdPersonUserControl thirdPersonUserControl = FindObjectOfType<ThirdPersonUserControl>();
+        if (thirdPersonUserControl != null)
+        {
+            player = thirdPersonUserControl.gameObject.transform;
+        }
+
         if (!EyeballGun) offset = Vector3.zero;
     }
 

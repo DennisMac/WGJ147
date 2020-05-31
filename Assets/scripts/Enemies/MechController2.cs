@@ -77,9 +77,12 @@ public class MechController2 : MonoBehaviour
         }
         else//go after player
         {
-            if (Vector3.Dot(transform.forward, playerCloak.transform.position - transform.position) > 0.8f) //facing the target close enough
+            if (playerCloak)
             {
-                rbody.AddForce(movementForce * transform.forward, ForceMode.Force);                
+                if (Vector3.Dot(transform.forward, playerCloak.transform.position - transform.position) > 0.8f) //facing the target close enough
+                {
+                    rbody.AddForce(movementForce * transform.forward, ForceMode.Force);
+                }
             }
         }
     }

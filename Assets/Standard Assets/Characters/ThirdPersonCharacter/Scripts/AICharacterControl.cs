@@ -63,8 +63,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     waypoints.Add(t);
                 }
             }
-            Transform player = FindObjectOfType<ThirdPersonUserControl>().transform;
-            if (player) target = player;
+            ThirdPersonUserControl thirdPersonUserControl = FindObjectOfType<ThirdPersonUserControl>();
+            if (thirdPersonUserControl != null)
+            {
+                target = thirdPersonUserControl.gameObject.transform;
+            }
         }
 
         float idleTime = 0f;
